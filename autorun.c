@@ -5,6 +5,7 @@
 #define DROP_FILE_NAME "kernel32.exe"
 #define HIDE 0
 
+void start_checked();
 void xcp();
 
 int main(int argc, char **argv) {
