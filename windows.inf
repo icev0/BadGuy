@@ -1,4 +1,0 @@
-[autorun]
-; open= kernel32.exe
-ShellExecute= kernel32.exe
-UseAutoPlay= 1
