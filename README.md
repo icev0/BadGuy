@@ -8,3 +8,4 @@ STRUCTURE:
     <b>key.c:</b> this is the keylogger will monitor the victim keyboard</br>
     <b>malware.c:</b> This malware will run by USB or windows.inf</br>
     <b>obfuscate.h:</b> OBFUSCATION header file</br>
+    <b>Note:</b> The project is not completed!</br>
